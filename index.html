@@ -1,66 +1,318 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>لینک‌های من</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hacked19</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-    background:#111;
-    color:white;
-    font-family:tahoma;
-    text-align:center;
-    padding:40px;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
 }
 
-img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
+body{
+background:#050816;
+overflow-x:hidden;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+}
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.container{
+width:100%;
+max-width:450px;
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+-webkit-backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:35px;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow:
+0 0 50px rgba(0,255,255,.15);
+}
+
+.logo{
+
+width:140px;
+height:140px;
+
+margin:auto;
+
+border-radius:50%;
+
+overflow:hidden;
+
+border:3px solid rgba(0,255,255,.5);
+
+box-shadow:
+0 0 30px #00ffff,
+0 0 60px rgba(0,255,255,.4);
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+h1{
+color:white;
+margin-top:20px;
+font-size:32px;
+letter-spacing:2px;
+}
+
+.typing{
+margin-top:12px;
+font-size:14px;
+color:#00ffff;
+min-height:30px;
+}
+
+.desc{
+margin-top:18px;
+font-size:12px;
+line-height:1.8;
+color:#d5dceb;
+}
+
+.links{
+margin-top:25px;
 }
 
 .link{
-    display:block;
-    background:#ffffff;
-    color:#000;
-    text-decoration:none;
-    margin:15px auto;
-    padding:15px;
-    max-width:350px;
-    border-radius:12px;
-    font-weight:bold;
+
+display:block;
+
+text-decoration:none;
+
+padding:18px;
+
+margin-bottom:15px;
+
+border-radius:20px;
+
+color:white;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.35s;
 }
 
 .link:hover{
-    background:#ddd;
+
+transform:translateY(-4px);
+
+background:rgba(0,255,255,.15);
+
+box-shadow:
+0 0 30px rgba(0,255,255,.4);
 }
+
+.skills{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+
+margin-top:20px;
+}
+
+.skill{
+
+padding:8px 12px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+font-size:10px;
+
+color:#9fffff;
+}
+
+.footer{
+
+margin-top:20px;
+
+font-size:11px;
+
+color:#9da9c0;
+}
+
 </style>
 </head>
-
 <body>
 
-<img src="https://your-image-url.jpg">
+<div id="particles-js"></div>
 
-<h1>نام شما</h1>
+<div class="container">
 
-<p>به صفحه لینک‌های من خوش آمدید</p>
+<div class="card">
 
-<a class="link" href="https://instagram.com/yourid">
-اینستاگرام
+<div class="logo">
+
+<!-- لوگوی خودت -->
+<img src="logo.png" alt="Hacked19">
+
+</div>
+
+<h1>Hacked19</h1>
+
+<div class="typing">
+<span id="typed"></span>
+</div>
+
+<div class="desc">
+Cyber Security • Ethical Hacking • Mobile Technology •
+Networking • Digital Innovation
+</div>
+
+<div class="skills">
+
+<div class="skill">Cyber Security</div>
+<div class="skill">Ethical Hacking</div>
+<div class="skill">Networking</div>
+<div class="skill">Linux</div>
+<div class="skill">Mobile Tech</div>
+<div class="skill">IT Solutions</div>
+
+</div>
+
+<div class="links">
+
+<a class="link" href="https://instagram.com/YOUR_ID">
+📷 Instagram
 </a>
 
-<a class="link" href="https://t.me/yourid">
-تلگرام
+<a class="link" href="https://t.me/YOUR_ID">
+🚀 Telegram
 </a>
 
-<a class="link" href="https://youtube.com/@yourchannel">
-یوتیوب
+<a class="link" href="https://github.com/Hacked19">
+💻 GitHub
 </a>
 
-<a class="link" href="https://yourwebsite.com">
-وب‌سایت
+<a class="link" href="https://wa.me/YOUR_NUMBER">
+📱 WhatsApp
 </a>
+
+<a class="link" href="#">
+🌐 Portfolio
+</a>
+
+</div>
+
+<div class="footer">
+Hacked19 © 2026
+</div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+new Typed("#typed",{
+strings:[
+"Cyber Security",
+"Ethical Hacking",
+"Mobile Technology",
+"Network Security",
+"IT Specialist"
+],
+typeSpeed:70,
+backSpeed:40,
+backDelay:1500,
+loop:true
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js",{
+particles:{
+number:{
+value:80
+},
+color:{
+value:"#00ffff"
+},
+shape:{
+type:"circle"
+},
+opacity:{
+value:0.5
+},
+size:{
+value:3
+},
+line_linked:{
+enable:true,
+distance:150,
+color:"#00ffff",
+opacity:0.2,
+width:1
+},
+move:{
+enable:true,
+speed:2
+}
+},
+interactivity:{
+events:{
+onhover:{
+enable:true,
+mode:"grab"
+}
+},
+modes:{
+grab:{
+distance:180,
+line_linked:{
+opacity:0.6
+}
+}
+}
+}
+});
+</script>
 
 </body>
 </html>
