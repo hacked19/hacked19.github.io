@@ -8,14 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
-
     <style>
         body {
             font-family: 'Vazirmatn', sans-serif;
             background-color: #05070c;
         }
-        
-        /* پس‌زمینه شبکه‌ای سایبری با وضوح بالاتر */
         .cyber-grid {
             background-image: 
                 linear-gradient(#0b111e 1px, transparent 1px),
@@ -23,8 +20,6 @@
             background-size: 45px 45px;
             background-position: center;
         }
-
-        /* درخشش کارت‌ها و دکمه‌های پریمیوم */
         .premium-glow {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -33,26 +28,22 @@
             border-color: rgba(16, 185, 129, 0.6);
             transform: scale(1.02);
         }
-
-        /* انیمیشن پالس نئونی چراغ سبز وضعیت */
-        @keyframes neon-pulse {
+        @keyframes neonPulse {
             0% { box-shadow: 0 0 0 0px rgba(16, 185, 129, 0.7); }
             100% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
         }
         .status-pulse {
-            animation: neon-pulse 1.8s infinite;
+            animation: neonPulse 1.8s infinite;
         }
-
-        /* مکان‌نمای چشمک‌زن ترمینال */
-        .cursor {
+        .t-cursor {
             display: inline-block;
             width: 7px;
             height: 15px;
             background-color: #10b981;
-            animation: blink 0.8s infinite;
+            animation: blinkBlock 0.8s infinite;
             vertical-align: middle;
         }
-        @keyframes blink {
+        @keyframes blinkBlock {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
@@ -83,7 +74,6 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             <div class="lg:col-span-5 space-y-6">
-                
                 <div class="text-center bg-slate-950/40 border border-emerald-950/30 p-6 rounded-3xl backdrop-blur-sm space-y-4">
                     <div class="inline-flex p-1.5 rounded-full bg-slate-950 border-2 border-emerald-800/20 shadow-xl shadow-emerald-950/30">
                         <div class="w-20 h-20 rounded-full bg-black border border-slate-800 flex items-center justify-center text-4xl text-emerald-400 font-mono font-black tracking-tighter shadow-inner">
@@ -102,11 +92,15 @@
                         <div class="flex flex-wrap justify-center gap-1.5">
                             <div class="flex items-center gap-1.5 px-2.5 py-1 bg-slate-950/80 border border-emerald-950/60 rounded-full text-[11px] text-gray-300">
                                 <i class="fa-solid fa-mobile-screen-button text-emerald-400 text-[9px]"></i>
-                                <span>نرم‌افزار موبایل</span>
+                                <span>تعمیرات تخصصی نرم‌افزار موبایل</span>
                             </div>
                             <div class="flex items-center gap-1.5 px-2.5 py-1 bg-slate-950/80 border border-emerald-950/60 rounded-full text-[11px] text-gray-300">
-                                <i class="fa-solid fa-shield-halved text-red-400 text-[9px]"></i>
+                                <i class="fa-solid fa-user-shield text-red-400 text-[9px]"></i>
                                 <span>امنیت و بازیابی پیج</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 px-2.5 py-1 bg-slate-950/80 border border-emerald-950/60 rounded-full text-[11px] text-gray-300">
+                                <i class="fa-solid fa-shield-halved text-cyan-400 text-[9px]"></i>
+                                <span>تست نفوذ و امنیت شبکه</span>
                             </div>
                             <div class="flex items-center gap-1.5 px-2.5 py-1 bg-slate-950/80 border border-emerald-950/60 rounded-full text-[11px] text-gray-300">
                                 <i class="fa-solid fa-sim-card text-purple-400 text-[9px]"></i>
@@ -114,7 +108,7 @@
                             </div>
                             <div class="flex items-center gap-1.5 px-2.5 py-1 bg-slate-950/80 border border-emerald-950/60 rounded-full text-[11px] text-gray-300">
                                 <i class="fa-solid fa-palette text-amber-400 text-[9px]"></i>
-                                <span>طراحی گرافیک و تامنیل</span>
+                                <span>طراحی گرافیک</span>
                             </div>
                         </div>
                     </div>
@@ -189,7 +183,7 @@
                             <div><span class="text-white">$</span> analytical fetch payload...</div>
                         </div>
                         <div id="terminal-cursor-line" class="pt-1">
-                            <span class="text-white">$</span> <span id="current-typing"></span><span class="cursor"></span>
+                            <span class="text-white">$</span> <span id="current-typing"></span><span class="t-cursor"></span>
                         </div>
                     </div>
                 </div>
@@ -205,79 +199,78 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            initTerminalScanner();
+            startLogAnalysis();
         });
 
-        function initTerminalScanner() {
-            const outputDiv = document.getElementById('terminal-output');
-            const typingSpan = document.getElementById('current-typing');
+        function startLogAnalysis() {
+            const container = document.getElementById('terminal-output');
+            const typingBuffer = document.getElementById('current-typing');
+            const ua = navigator.userAgent;
             
-            let os = "Unknown OS";
-            if (navigator.userAgent.indexOf("Win") != -1) os = "Windows NT Intel";
-            if (navigator.userAgent.indexOf("Mac") != -1) os = "macOS Core";
-            if (navigator.userAgent.indexOf("Linux") != -1) os = "Linux Kernel";
-            if (navigator.userAgent.indexOf("Android") != -1) os = "Android Architecture";
-            if (navigator.userAgent.indexOf("like Mac") != -1) os = "iOS Mobile Platform";
+            let currentPlatform = "Linux x86_64";
+            if (ua.indexOf("Win") !== -1) currentPlatform = "Windows Environment";
+            else if (ua.indexOf("Mac") !== -1) currentPlatform = "Darwin Core OS";
+            else if (ua.indexOf("Android") !== -1) currentPlatform = "Android Linux Kernel";
+            else if (ua.indexOf("like Mac") !== -1) currentPlatform = "iOS Subsystem";
 
-            let browser = "Unknown Browser";
-            if (navigator.userAgent.indexOf("Chrome") != -1) browser = "Google Chrome Engine";
-            else if (navigator.userAgent.indexOf("Safari") != -1) browser = "Apple Safari Base";
-            else if (navigator.userAgent.indexOf("Firefox") != -1) browser = "Mozilla Firefox Core";
+            let activeEngine = "WebKit Engine";
+            if (ua.indexOf("Chrome") !== -1) activeEngine = "Chromium Engine Node";
+            else if (ua.indexOf("Firefox") !== -1) activeEngine = "Gecko Firefox Core";
 
             fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    const linesToType = [
-                        `TARGET_IP: ${data.ip || '127.0.0.1'}`,
-                        `GEOLOCATION: ${data.city || 'Unknown'}, ${data.country_code || 'UN'}`,
-                        `ISP_NODE: ${data.org ? data.org.substring(0, 30) : 'Local Provider'}`,
-                        `CLIENT_OS: ${os}`,
-                        `BROWSER_ENV: ${browser}`,
+                .then(res => res.json())
+                .then(resData => {
+                    const coreMetrics = [
+                        `TARGET_IP: ${resData.ip || '127.0.0.1'}`,
+                        `GEOLOCATION: ${resData.city || 'Unknown Node'}, ${resData.country_code || 'NET'}`,
+                        `ISP_NODE: ${resData.org ? resData.org.substring(0, 28) : 'Gateway Provider'}`,
+                        `CLIENT_OS: ${currentPlatform}`,
+                        `BROWSER_ENV: ${activeEngine}`,
                         `PAYLOAD_STATUS: ESTABLISHED_SECURE`
                     ];
-                    typeTerminalLines(linesToType, 0);
+                    renderTerminalStream(coreMetrics, 0);
                 })
                 .catch(() => {
-                    const backupLines = [
-                        `TARGET_IP: 127.0.0.1 (PROXY_DETECTED)`,
-                        `GEOLOCATION: BLOCKED_BY_GATEWAY`,
-                        `CLIENT_OS: ${os}`,
-                        `BROWSER_ENV: ${browser}`,
-                        `PAYLOAD_STATUS: LOOPBACK_FALLBACK`
+                    const fallbackMetrics = [
+                        `TARGET_IP: 127.0.0.1 (LOOPBACK_FALLBACK)`,
+                        `GEOLOCATION: SENSOR_OBFUSCATED`,
+                        `CLIENT_OS: ${currentPlatform}`,
+                        `BROWSER_ENV: ${activeEngine}`,
+                        `PAYLOAD_STATUS: SSL_PROXY_DETECTED`
                     ];
-                    typeTerminalLines(backupLines, 0);
+                    renderTerminalStream(fallbackMetrics, 0);
                 });
 
-            function typeTerminalLines(lines, index) {
-                if (index >= lines.length) {
+            function renderTerminalStream(dataset, ptr) {
+                if (ptr >= dataset.length) {
                     document.getElementById('terminal-cursor-line').style.display = 'none';
                     return;
                 }
 
-                let currentText = lines[index];
-                let charIndex = 0;
-                typingSpan.textContent = "";
+                let rawStr = dataset[ptr];
+                let idx = 0;
+                typingBuffer.textContent = "";
 
-                function typeChar() {
-                    if (charIndex < currentText.length) {
-                        typingSpan.textContent += currentText.charAt(charIndex);
-                        charIndex++;
-                        setTimeout(typeChar, 20);
+                function streamChar() {
+                    if (idx < rawStr.length) {
+                        typingBuffer.textContent += rawStr.charAt(idx);
+                        idx++;
+                        setTimeout(streamChar, 25);
                     } else {
-                        const newLine = document.createElement('div');
-                        if(currentText.includes('TARGET_IP') || currentText.includes('SECURE') || currentText.includes('FALLBACK')) {
-                            newLine.className = 'text-white font-bold tracking-tight';
+                        const row = document.createElement('div');
+                        if(/TARGET_IP|SECURE|FALLBACK|PROXY/.test(rawStr)) {
+                            row.className = 'text-white font-bold tracking-tight';
                         }
-                        newLine.innerHTML = `<span class="text-emerald-600">✔</span> ${currentText}`;
-                        outputDiv.appendChild(newLine);
+                        row.innerHTML = `<span class="text-emerald-600">✔</span> ${rawStr}`;
+                        container.appendChild(row);
                         
-                        typingSpan.textContent = "";
+                        typingBuffer.textContent = "";
                         setTimeout(() => {
-                            typeTerminalLines(lines, index + 1);
-                        }, 180);
+                            renderTerminalStream(dataset, ptr + 1);
+                        }, 150);
                     }
                 }
-                typeChar();
+                streamChar();
             }
         }
     </script>
