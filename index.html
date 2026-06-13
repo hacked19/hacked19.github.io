@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacked19 / P R E M I U M</title>
+    <title>Hacked19</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,6 +50,20 @@
         body.scrolled #matrix-layer {
             opacity: 0.04;
         }
+
+        /* مکان‌نمای چشمک‌زن ترمینال */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #10b981;
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="text-gray-300 min-h-screen overflow-x-hidden selection:bg-emerald-500 selection:text-black cyber-grid">
@@ -57,10 +71,7 @@
     <div id="matrix-layer" class="fixed inset-0 -z-20 font-mono text-[11px] text-emerald-500 break-all p-4 pointer-events-none select-none tracking-widest overflow-hidden">
         01100011 01111001 01100010 01100101 01110010 00100000 01101000 01100001 01100011 01101011 00100000 00110001 00111001 00001010 
         01110011 01100101 01100011 01110101 01110010 01110011 00100000 01110011 01111001 01110015 01110100 01100101 01101101 00001010
-        01011011 01000001 01000011 01010100 01001001 01010110 01000101 01011101 00100000 01110101 01110011 01100101 01110010 00001010
         SYSTEM_CONNECTED_TRUE_NODE_ONLINE_CORE_INITIALIZED_PORT_8080_SECURE_ACCESS_GRANTED_HACKED19_MAIN_REPOS_LOADED
-        01100011 01111001 01100010 01100101 01110010 00100000 01101000 01100001 01100011 01101011 00100000 00110001 00111001 00001010 
-        01110011 01100101 01100011 01110101 01110010 01110011 00100000 01110011 01111001 01110015 01110100 01100101 01101101 00001010
     </div>
 
     <header class="sticky top-0 z-50 backdrop-blur-lg bg-slate-950/80 border-b border-emerald-950">
@@ -70,18 +81,10 @@
                 <a href="#" class="text-2xl font-bold tracking-widest text-emerald-400 font-mono">H<span class="text-white">1</span>9</a>
             </div>
             <nav class="hidden md:flex items-center gap-10 text-sm font-medium tracking-tight">
-                <a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">
-                    درباره من
-                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full"></span>
-                </a>
-                <a href="#projects" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">
-                    مخزن پروژه‌ها
-                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full"></span>
-                </a>
-                <a href="#contact" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">
-                    ارتباط سریع
-                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full"></span>
-                </a>
+                <a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">درباره من</a>
+                <a href="#terminal-section" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">وضعیت سیستم</a>
+                <a href="#projects" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">مخزن پروژه‌ها</a>
+                <a href="#contact" class="text-gray-300 hover:text-emerald-400 transition-colors relative group">ارتباط سریع</a>
             </nav>
             <div class="font-mono text-xs text-emerald-400 bg-emerald-950/40 px-4 py-2 rounded-full border border-emerald-900/30 shadow-sm">
                 Status : <span class="animate-pulse">Online</span>
@@ -91,7 +94,7 @@
 
     <main class="max-w-7xl mx-auto px-6 py-16 md:py-28 flex-grow">
         
-        <section id="about" class="text-center max-w-3xl mx-auto mb-32 space-y-8" data-aos="fade-up">
+        <section id="about" class="text-center max-w-3xl mx-auto mb-20 space-y-8" data-aos="fade-up">
             <div class="inline-flex p-1.5 rounded-full bg-slate-900/60 border-2 border-emerald-800/30 mb-4 shadow-xl">
                 <div class="w-24 h-24 rounded-full bg-slate-950 border border-slate-850 flex items-center justify-center text-4xl text-emerald-400 font-mono font-bold shadow-inner">
                     H19
@@ -107,14 +110,37 @@
                 <a href="#projects" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-black font-bold rounded-xl transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-600/20 text-md">
                     ورود به مخزن
                 </a>
-                <a href="#contact" class="px-8 py-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-700/50 rounded-xl transition-all text-md">
-                    ارتباط با هسته
+                <a href="#terminal-section" class="px-8 py-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-700/50 rounded-xl transition-all text-md">
+                    تست نفوذ پذیری IP
                 </a>
             </div>
         </section>
 
+        <section id="terminal-section" class="max-w-3xl mx-auto mb-32" data-aos="fade-up" dir="ltr">
+            <div class="w-full bg-[#090d16] border border-emerald-500/30 rounded-xl overflow-hidden shadow-2xl shadow-emerald-950/20">
+                <div class="bg-[#0e1422] px-4 py-3 flex items-center justify-between border-b border-emerald-950">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                    </div>
+                    <span class="text-xs font-mono text-emerald-400/70 tracking-widest">bash - live_visitor_analyzer.sh</span>
+                    <div class="w-10"></div>
+                </div>
+                <div class="p-6 font-mono text-sm text-emerald-400 space-y-3 min-h-[220px] bg-black/40">
+                    <div class="text-emerald-600/70 text-xs">INITIALIZING NETWORK SCANNER FOR TARGET NODE...</div>
+                    <div id="terminal-output" class="space-y-2 whitespace-pre-wrap leading-relaxed">
+                        <div><span class="text-white">$</span> scanning visitor metrics...</div>
+                    </div>
+                    <div id="terminal-cursor-line">
+                        <span class="text-white">$</span> <span id="current-typing"></span><span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="space-y-12">
-            <div class="flex flex-col items-center md:items-start gap-2" data-aos="fade-left">
+            <div class="flex flex-col items-center md:items-start gap-2" data-aos="fade-left" dir="rtl">
                 <div class="flex items-center gap-2">
                     <span class="w-4 h-0.5 bg-emerald-500"></span>
                     <h2 class="text-3xl font-extrabold text-white">پروژه‌ها و ابزارها</h2>
@@ -122,12 +148,12 @@
                 <p class="text-sm text-emerald-400 font-mono">/root/repositories</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" dir="rtl">
                 <div class="cyber-card-glow bg-slate-950 border border-emerald-950/80 rounded-2xl p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all group" 
                      data-aos="fade-up" data-aos-delay="100"
                      data-vanilla-tilt data-vanilla-tilt-max="10" data-vanilla-tilt-speed="400" data-vanilla-tilt-glare data-vanilla-tilt-max-glare="0.1">
                     <div class="space-y-5">
-                        <div class="w-14 h-14 rounded-xl bg-emerald-950/40 border-2 border-emerald-900/30 flex items-center justify-center text-emerald-400 text-2xl group-hover:bg-emerald-500 group-hover:text-black transition-all shadow-md">
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/40 border-2 border-emerald-800/30 flex items-center justify-center text-emerald-400 text-2xl group-hover:bg-emerald-500 group-hover:text-black transition-all shadow-md">
                             <i class="fa-solid fa-code-branch"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">ابزارهای اندروید</h3>
@@ -185,10 +211,10 @@
             </div>
         </section>
 
-        <section id="contact" class="mt-32 bg-slate-950/80 border border-emerald-950 rounded-3xl p-10 text-center space-y-8 max-w-4xl mx-auto shadow-2xl cyber-grid" data-aos="zoom-in">
+        <section id="contact" class="mt-32 bg-slate-950/80 border border-emerald-950 rounded-3xl p-10 text-center space-y-8 max-w-4xl mx-auto shadow-2xl cyber-grid" data-aos="zoom-in" dir="rtl">
             <h2 class="text-2xl md:text-3xl font-extrabold text-white">اتصال به شبکه ارتباطی</h2>
             <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
-                برای هرگونه سوال، پیشنهاد همکاری یا نیاز به ابزار خاص، می‌توانید مستقیم با من تماس بگیرید. هسته مرکزی آماده پاسخگویی است.
+                برای هرگونه سوال، پیشنهاد همکاری یا نیاز به ابزار خاص، می‌توانید مستقیم با من تماس بگیرید.
             </p>
             <div class="flex justify-center gap-5 flex-wrap pt-4">
                 <a href="#" class="flex items-center gap-2.5 px-6 py-2.5 bg-slate-900/60 hover:bg-slate-800 border-2 border-slate-800 hover:border-emerald-700 rounded-2xl transition-all text-md font-mono text-gray-200 shadow-lg">
@@ -205,10 +231,10 @@
 
     </main>
 
-    <footer class="bg-black/60 border-t border-slate-950 text-center py-8 text-xs text-gray-700 font-mono mt-16">
+    <footer class="bg-black/60 border-t border-slate-950 text-center py-8 text-xs text-gray-700 font-mono mt-16" dir="rtl">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
             <p>&copy; 2026 HACKED19 SYSTEM. All Rights Reserved.</p>
-            <p class="text-gray-600">PREMIUM TECH INTERFACE - V2.0</p>
+            <p class="text-gray-600">PREMIUM TECH INTERFACE - V2.5</p>
         </div>
     </footer>
 
@@ -218,16 +244,16 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // فعال‌سازی انیمیشن‌های اسکرول به محض لود شدن کامل المان‌ها
         document.addEventListener("DOMContentLoaded", function() {
             AOS.init({
                 duration: 800,
                 once: true,
                 offset: 50,
             });
+            // اجرای اسکریپت ترمینال به محض لود شدن صفحه
+            initTerminalScanner();
         });
 
-        // افکت لایه ماتریکسی هنگام اسکرول
         window.addEventListener('scroll', function() {
             if (window.scrollY > 150) {
                 document.body.classList.add('scrolled');
@@ -235,7 +261,88 @@
                 document.body.classList.remove('scrolled');
             }
         });
-    </script>
 
+        // هک اسکریپت: استخراج اطلاعات سیستم و افکت تایپ ترمینالی
+        function initTerminalScanner() {
+            const outputDiv = document.getElementById('terminal-output');
+            const typingSpan = document.getElementById('current-typing');
+            
+            // ۱. تشخیص سیستم‌عامل
+            let os = "Unknown OS";
+            if (navigator.userAgent.indexOf("Win") != -1) os = "Windows NT Intel";
+            if (navigator.userAgent.indexOf("Mac") != -1) os = "macOS Darwin Core";
+            if (navigator.userAgent.indexOf("Linux") != -1) os = "Linux GNU/Kernel";
+            if (navigator.userAgent.indexOf("Android") != -1) os = "Android Linux-Based OS";
+            if (navigator.userAgent.indexOf("like Mac") != -1) os = "iOS Apple Device";
+
+            // ۲. تشخیص مرورگر
+            let browser = "Unknown Browser";
+            if (navigator.userAgent.indexOf("Chrome") != -1) browser = "Google Chrome Engine";
+            else if (navigator.userAgent.indexOf("Safari") != -1) browser = "Apple Safari Base";
+            else if (navigator.userAgent.indexOf("Firefox") != -1) browser = "Mozilla Firefox Core";
+            else if (navigator.userAgent.indexOf("Edge") != -1) browser = "Microsoft Edge HTML";
+
+            // واکشی اطلاعات شبکه از API رایگان
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const linesToType = [
+                        `ACCESS_POINT: PRE-FETCH STABLE`,
+                        `TARGET_IP: ${data.ip || '127.0.0.1'}`,
+                        `LOCATION: ${data.city || 'Unknown'}, ${data.country_name || 'Unknown'} (ISP: ${data.org || 'Local'})`,
+                        `VISITOR_OS: ${os}`,
+                        `USER_AGENT: ${browser}`,
+                        `SECURITY_LOCK: NO_THREAT_DETECTED`,
+                        `STATUS: INFILTRATION_SUCCESSFUL.`
+                    ];
+                    typeTerminalLines(linesToType, 0);
+                })
+                .catch(() => {
+                    // در صورت خطای شبکه یا لود نشدن API، اطلاعات محلی نمایش داده می‌شود
+                    const backupLines = [
+                        `ACCESS_POINT: LOCAL_LOOPBACK`,
+                        `TARGET_IP: 127.0.0.1 (PROXY_ACTIVE)`,
+                        `LOCATION: GEO_BLOCKED_BY_NODE`,
+                        `VISITOR_OS: ${os}`,
+                        `USER_AGENT: ${browser}`,
+                        `STATUS: SCAN_COMPLETE_WITH_WARNINGS`
+                    ];
+                    typeTerminalLines(backupLines, 0);
+                });
+
+            function typeTerminalLines(lines, index) {
+                if (index >= lines.length) {
+                    document.getElementById('terminal-cursor-line').style.display = 'none';
+                    return;
+                }
+
+                let currentText = lines[index];
+                let charIndex = 0;
+                typingSpan.textContent = "";
+
+                function typeChar() {
+                    if (charIndex < currentText.length) {
+                        typingSpan.textContent += currentText.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeChar, 30); // سرعت تایپ کاراکترها
+                    } else {
+                        // اضافه کردن خط تایپ شده به خروجی ثابت ترمینال
+                        const newLine = document.createElement('div');
+                        if(currentText.includes('IP') || currentText.includes('SUCCESSFUL')) {
+                            newLine.className = 'text-white font-bold'; // هایلایت کردن آی‌پی و استاتوس
+                        }
+                        newLine.innerHTML = `<span class="text-emerald-600">✔</span> ${currentText}`;
+                        outputDiv.appendChild(newLine);
+                        
+                        typingSpan.textContent = "";
+                        setTimeout(() => {
+                            typeTerminalLines(lines, index + 1);
+                        }, 250); // مکث کوتاه بین خطوط
+                    }
+                }
+                typeChar();
+            }
+        }
+    </script>
 </body>
 </html>
