@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacked19 | Core Link Interface</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Vazirmatn -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Vanilla Tilt for 3D Effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
 
     <style>
@@ -62,135 +58,129 @@
         }
     </style>
 </head>
-<body class="text-gray-300 min-h-screen flex flex-col justify-between p-5 md:p-10 cyber-grid selection:bg-emerald-500 selection:text-black">
+<body class="text-gray-300 min-h-screen flex flex-col justify-between p-4 md:p-10 cyber-grid selection:bg-emerald-500 selection:text-black">
 
-    <!-- لایه نئونی پس‌زمینه زنده -->
     <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-emerald-950/20 via-[#05070c] to-[#05070c]"></div>
 
-    <!-- کانتینر اصلی با ساختار گرافیکی عمیق -->
-    <main class="w-full max-w-md mx-auto space-y-8 pt-4 pb-12">
+    <div class="w-full max-w-md lg:max-w-5xl mx-auto space-y-6 pt-2 pb-6 flex-grow flex flex-col justify-center">
         
-        <!-- هدر و وضعیت آنلاین (Status Node) -->
-        <div class="flex items-center justify-between bg-slate-950/70 border border-emerald-950/60 backdrop-blur-md px-4 py-2.5 rounded-full shadow-lg shadow-black/40" dir="ltr">
-            <div class="flex items-center gap-2.5">
-                <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 status-pulse"></span>
-                </span>
-                <span class="text-[11px] font-mono text-emerald-400 font-bold tracking-widest">STATUS: ONLINE</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <span class="text-xs font-mono text-white font-bold tracking-tight">HACKED19</span>
-                <span class="w-1.5 h-3.5 bg-emerald-500 rounded-sm animate-pulse"></span>
+        <div class="w-full bg-slate-950/70 border border-emerald-950/60 backdrop-blur-md px-5 py-3 rounded-full shadow-lg shadow-black/40" dir="ltr">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 status-pulse"></span>
+                    </span>
+                    <span class="text-[11px] font-mono text-emerald-400 font-bold tracking-widest">STATUS: ONLINE</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono text-white font-bold tracking-tight">HACKED19</span>
+                    <span class="w-1.5 h-3.5 bg-emerald-500 rounded-sm animate-pulse"></span>
+                </div>
             </div>
         </div>
 
-        <!-- بخش آواتار و بیوگرافی -->
-        <div class="text-center space-y-4">
-            <div class="inline-flex p-1.5 rounded-full bg-slate-950 border-2 border-emerald-800/20 shadow-xl shadow-emerald-950/30">
-                <div class="w-24 h-24 rounded-full bg-black border border-slate-800 flex items-center justify-center text-4xl text-emerald-400 font-mono font-black tracking-tighter shadow-inner">
-                    H19
-                </div>
-            </div>
-            <div class="space-y-1">
-                <h1 class="text-3xl font-black text-white tracking-tight">Hacked19</h1>
-                <p class="text-xs font-mono text-emerald-400 tracking-widest">/root/secured_interface</p>
-            </div>
-            <p class="text-gray-400 text-sm max-w-sm mx-auto leading-relaxed px-2">
-                توسعه‌دهنده وب، تکنسین و متخصص راه‌حل‌های نرم‌افزاری موبایل. اتصال مستقیم به گره‌های ارتباطی و مخازن ابزارها.
-            </p>
-        </div>
-
-        <!-- بخش شبکه‌های اجتماعی (بالا - یک خطی با دکمه‌های آیکونیک عمیق) -->
-        <div class="space-y-3" dir="rtl">
-            <div class="text-[10px] font-mono text-emerald-500/60 tracking-widest text-center mb-1">DIRECT LINKS</div>
-
-            <!-- لینک تلگرام -->
-            <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
-               data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
-                <div class="flex items-center gap-4">
-                    <div class="w-9 h-9 rounded-xl bg-cyan-950/50 border border-cyan-800/30 flex items-center justify-center text-cyan-400 shadow-inner">
-                        <i class="fa-brands fa-telegram text-xl"></i>
-                    </div>
-                    <span class="text-sm font-bold text-white">کانال تلگرام</span>
-                </div>
-                <i class="fa-solid fa-arrow-left-long text-xs text-emerald-500/50 group-hover:text-emerald-400"></i>
-            </a>
-
-            <!-- لینک اینستاگرام -->
-            <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
-               data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
-                <div class="flex items-center gap-4">
-                    <div class="w-9 h-9 rounded-xl bg-pink-950/50 border border-pink-800/30 flex items-center justify-center text-pink-400 shadow-inner">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                    </div>
-                    <span class="text-sm font-bold text-white">صفحه اینستاگرام</span>
-                </div>
-                <i class="fa-solid fa-arrow-left-long text-xs text-emerald-500/50"></i>
-            </a>
-
-            <!-- لینک گیت‌هاب -->
-            <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
-               data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
-                <div class="flex items-center gap-4">
-                    <div class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white shadow-inner">
-                        <i class="fa-brands fa-github text-xl"></i>
-                    </div>
-                    <span class="text-sm font-bold text-white">مخزن کدهای گیت‌هاب</span>
-                </div>
-                <i class="fa-solid fa-arrow-left-long text-xs text-emerald-500/50"></i>
-            </a>
-
-            <!-- لینک ابزارهای وب -->
-            <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
-               data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
-                <div class="flex items-center gap-4">
-                    <div class="w-9 h-9 rounded-xl bg-emerald-950/50 border border-emerald-800/30 flex items-center justify-center text-emerald-400 shadow-inner">
-                        <i class="fa-solid fa-laptop-code text-base"></i>
-                    </div>
-                    <span class="text-sm font-bold text-white">ابزارها و مینی‌پروژه‌ها</span>
-                </div>
-                <span class="text-[9px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-md border border-emerald-800">LIVE</span>
-            </a>
-        </div>
-
-        <!-- بخش ابزار زنده تست آی‌پـی (پایین - با رابط کاربری ترمینال سه‌بعدی سنگین) -->
-        <div class="space-y-3">
-            <div class="text-[10px] font-mono text-emerald-500/60 tracking-widest text-center mb-1">NETWORK INFRASTRUCTURE</div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <div class="w-full bg-[#04060b] border-2 border-emerald-500/20 rounded-2xl overflow-hidden shadow-2xl shadow-black" dir="ltr"
-                 data-vanilla-tilt data-vanilla-tilt-max="4" data-vanilla-tilt-speed="300" data-vanilla-tilt-glare data-vanilla-tilt-max-glare="0.05">
-                <!-- نوار بالای ترمینال -->
-                <div class="bg-[#0a0f1a] px-4 py-3 flex items-center justify-between border-b border-emerald-950/80">
-                    <div class="flex items-center gap-1.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
+            <div class="lg:col-span-5 space-y-6">
+                <div class="text-center bg-slate-950/40 border border-emerald-950/30 p-6 rounded-3xl backdrop-blur-sm space-y-4">
+                    <div class="inline-flex p-1.5 rounded-full bg-slate-950 border-2 border-emerald-800/20 shadow-xl shadow-emerald-950/30">
+                        <div class="w-20 h-20 rounded-full bg-black border border-slate-800 flex items-center justify-center text-4xl text-emerald-400 font-mono font-black tracking-tighter shadow-inner">
+                            H19
+                        </div>
                     </div>
-                    <span class="text-[10px] font-mono text-emerald-400/80 tracking-widest font-bold">visitor_analyzer.sh</span>
-                    <div class="w-6"></div>
+                    <div class="space-y-1">
+                        <h1 class="text-2xl font-black text-white tracking-tight">Hacked19</h1>
+                        <p class="text-xs font-mono text-emerald-400 tracking-widest">/root/secured_interface</p>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed px-2">
+                        توسعه‌دهنده وب، تکنسین و متخصص راه‌حل‌های نرم‌افزاری موبایل. اتصال مستقیم به گره‌های ارتباطی و مخازن ابزارها.
+                    </p>
                 </div>
-                <!-- دیتای خروجی ترمینال با سایز فونت بهینه‌شده -->
-                <div class="p-5 font-mono text-[11px] text-emerald-400 space-y-2 min-h-[150px] bg-gradient-to-b from-black/80 to-[#04060b]">
-                    <div class="text-emerald-600/60 text-[10px]">INITIALIZING DEEP IP METRICS FOR TARGET...</div>
-                    <div id="terminal-output" class="space-y-1 whitespace-pre-wrap leading-relaxed">
-                        <div><span class="text-white">$</span> analytical fetch payload...</div>
+
+                <div class="space-y-3" dir="rtl">
+                    <div class="text-[10px] font-mono text-emerald-500/60 tracking-widest text-center mb-1">DIRECT LINKS</div>
+
+                    <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
+                       data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
+                        <div class="flex items-center gap-4">
+                            <div class="w-9 h-9 rounded-xl bg-cyan-950/50 border border-cyan-800/30 flex items-center justify-center text-cyan-400 shadow-inner">
+                                <i class="fa-brands fa-telegram text-xl"></i>
+                            </div>
+                            <span class="text-sm font-bold text-white">کانال تلگرام</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-left-long text-xs text-emerald-500/50"></i>
+                    </a>
+
+                    <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
+                       data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
+                        <div class="flex items-center gap-4">
+                            <div class="w-9 h-9 rounded-xl bg-pink-950/50 border border-pink-800/30 flex items-center justify-center text-pink-400 shadow-inner">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </div>
+                            <span class="text-sm font-bold text-white">صفحه اینستاگرام</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-left-long text-xs text-emerald-500/50"></i>
+                    </a>
+
+                    <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
+                       data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
+                        <div class="flex items-center gap-4">
+                            <div class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white shadow-inner">
+                                <i class="fa-brands fa-github text-xl"></i>
+                            </div>
+                            <span class="text-sm font-bold text-white">مخزن کدهای گیت‌هاب</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-left-long text-xs text-emerald-500/50"></i>
+                    </a>
+
+                    <a href="#" class="premium-glow flex items-center justify-between w-full p-4 bg-slate-950 border border-emerald-950 rounded-2xl text-gray-200"
+                       data-vanilla-tilt data-vanilla-tilt-max="6" data-vanilla-tilt-speed="400">
+                        <div class="flex items-center gap-4">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-950/50 border border-emerald-800/30 flex items-center justify-center text-emerald-400 shadow-inner">
+                                <i class="fa-solid fa-laptop-code text-base"></i>
+                            </div>
+                            <span class="text-sm font-bold text-white">ابزارها و مینی‌پروژه‌ها</span>
+                        </div>
+                        <span class="text-[9px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-md border border-emerald-800">LIVE</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-3 lg:mt-[31px]">
+                <div class="text-[10px] font-mono text-emerald-500/60 tracking-widest text-center lg:text-left mb-1">NETWORK INFRASTRUCTURE</div>
+                
+                <div class="w-full bg-[#04060b] border-2 border-emerald-500/20 rounded-2xl overflow-hidden shadow-2xl shadow-black lg:min-h-[420px] flex flex-col" dir="ltr"
+                     data-vanilla-tilt data-vanilla-tilt-max="3" data-vanilla-tilt-speed="300" data-vanilla-tilt-glare data-vanilla-tilt-max-glare="0.03">
+                    <div class="bg-[#0a0f1a] px-4 py-3 flex items-center justify-between border-b border-emerald-950/80">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
+                        </div>
+                        <span class="text-[10px] font-mono text-emerald-400/80 tracking-widest font-bold">visitor_analyzer.sh</span>
+                        <div class="w-6"></div>
                     </div>
-                    <div id="terminal-cursor-line">
-                        <span class="text-white">$</span> <span id="current-typing"></span><span class="cursor"></span>
+                    <div class="p-5 font-mono text-[11px] md:text-xs text-emerald-400 space-y-3 bg-gradient-to-b from-black/80 to-[#04060b] flex-grow">
+                        <div class="text-emerald-600/60 text-[10px] tracking-wider">INITIALIZING DEEP IP METRICS FOR TARGET...</div>
+                        <div id="terminal-output" class="space-y-2 whitespace-pre-wrap leading-relaxed">
+                            <div><span class="text-white">$</span> analytical fetch payload...</div>
+                        </div>
+                        <div id="terminal-cursor-line" class="pt-1">
+                            <span class="text-white">$</span> <span id="current-typing"></span><span class="cursor"></span>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </main>
+    </div>
 
-    <!-- فوتر مینی مال متنی -->
-    <footer class="text-center text-[10px] text-gray-700 font-mono py-4" dir="ltr">
+    <footer class="text-center text-[10px] text-gray-700 font-mono py-4 mt-4" dir="ltr">
         <p>&copy; 2026 HACKED19 SECURITY ARCHITECTURE</p>
     </footer>
 
-    <!-- جاوااسکریپت موتور تحلیل کلاینت -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             initTerminalScanner();
@@ -218,10 +208,10 @@
                     const linesToType = [
                         `TARGET_IP: ${data.ip || '127.0.0.1'}`,
                         `GEOLOCATION: ${data.city || 'Unknown'}, ${data.country_code || 'UN'}`,
-                        `ISP_NODE: ${data.org ? data.org.substring(0, 22) : 'Local Provider'}`,
+                        `ISP_NODE: ${data.org ? data.org.substring(0, 30) : 'Local Provider'}`,
                         `CLIENT_OS: ${os}`,
                         `BROWSER_ENV: ${browser}`,
-                        `PAYLOAD: ESTABLISHED_SECURE`
+                        `PAYLOAD_STATUS: ESTABLISHED_SECURE`
                     ];
                     typeTerminalLines(linesToType, 0);
                 })
@@ -231,7 +221,7 @@
                         `GEOLOCATION: BLOCKED_BY_GATEWAY`,
                         `CLIENT_OS: ${os}`,
                         `BROWSER_ENV: ${browser}`,
-                        `PAYLOAD: LOOPBACK_FALLBACK`
+                        `PAYLOAD_STATUS: LOOPBACK_FALLBACK`
                     ];
                     typeTerminalLines(backupLines, 0);
                 });
@@ -250,7 +240,7 @@
                     if (charIndex < currentText.length) {
                         typingSpan.textContent += currentText.charAt(charIndex);
                         charIndex++;
-                        setTimeout(typeChar, 25);
+                        setTimeout(typeChar, 20);
                     } else {
                         const newLine = document.createElement('div');
                         if(currentText.includes('TARGET_IP') || currentText.includes('SECURE') || currentText.includes('FALLBACK')) {
@@ -262,7 +252,7 @@
                         typingSpan.textContent = "";
                         setTimeout(() => {
                             typeTerminalLines(lines, index + 1);
-                        }, 200);
+                        }, 180);
                     }
                 }
                 typeChar();
